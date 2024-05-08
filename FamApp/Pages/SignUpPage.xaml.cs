@@ -27,7 +27,7 @@ public partial class SignUpPage : ContentPage
             firstNameEntry,
             lastNameEntry,
             emailEntry,
-            passwordEntry123
+            passwordEntry
         ];
 
         bool valid = true;

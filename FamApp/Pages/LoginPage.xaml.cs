@@ -43,8 +43,9 @@ public partial class LoginPage : ContentPage
     {
         try
         {
-            Security sec = new Security();
-            return sec.VerifyPassword(vaidateData[username], );
+            // TODO: hashedPassword aus der API holen
+            string hashedPassword = PasswordHashing.Hash(validateData[username]);
+            return PasswordHashing.Verify(password, hashedPassword);
         }
         catch
         {
@@ -55,9 +56,6 @@ public partial class LoginPage : ContentPage
     public LoginPage()
 	{
 		InitializeComponent();
-        Security sec = new Security();
-        this.hashedpw = sec.HashPasword(validateData["timz"], out var salt);
-        this.salt = salt;
     }
 
 }
