@@ -21,4 +21,5 @@ namespace FamApp.WinUI
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
     }
+
 }
