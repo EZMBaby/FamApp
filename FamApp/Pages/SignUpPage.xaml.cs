@@ -16,7 +16,11 @@ public partial class SignUpPage : ContentPage
         regex = new Regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
        
     }
-   async void OnRegisterClick(object sender, EventArgs e)
+    async void LoginBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new LoginPage());
+    }
+    async void OnRegisterClick(object sender, EventArgs e)
     {
         Entry firstNameEntry = FirstNameInput;
         Entry lastNameEntry = LastNameInput;

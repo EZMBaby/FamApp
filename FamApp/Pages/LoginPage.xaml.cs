@@ -56,6 +56,9 @@ public partial class LoginPage : ContentPage
     public LoginPage()
 	{
 		InitializeComponent();
-    }
+        Security sec = new Security();
+        this.hashedpw = sec.HashPasword(validateData["timz"], out var salt);
+        this.salt = salt;
+    }*/
 
 }
