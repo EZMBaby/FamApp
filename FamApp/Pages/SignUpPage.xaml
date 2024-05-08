@@ -5,6 +5,7 @@
              x:Class="FamApp.Pages.SignUpPage"
              Title="SignUpPage"
              Shell.NavBarIsVisible="False">
+    
     <Grid RowDefinitions="100,Auto,100"
        ColumnDefinitions="30,*,30">
 
@@ -35,8 +36,8 @@
             <Label Text="Vorname"
                    FontSize="12"
                    TextTransform="Uppercase"
-                   Margin="0,0,200,10"
-                   HorizontalTextAlignment="Center"
+                   Margin="8"
+                   HorizontalTextAlignment="Start"
                    />
             <Frame IsClippedToBounds="True"
                    Padding="0"
@@ -53,8 +54,8 @@
             <Label Text="Nachname"
                     FontSize="12"
                     TextTransform="Uppercase"
-                    Margin="0,0,200,10"
-                    HorizontalTextAlignment="Center"
+                    Margin="8"
+                    HorizontalTextAlignment="Start"
                     />
             <Frame IsClippedToBounds="True"
                    Padding="0"
@@ -70,8 +71,8 @@
             <Label Text="Email"
                     FontSize="12"
                     TextTransform="Uppercase"
-                    Margin="0,0,200,10"
-                    HorizontalTextAlignment="Center"/>
+                    Margin="8"
+                    HorizontalTextAlignment="Start"/>
             <Frame IsClippedToBounds="True"
                     Padding="0"
                     Margin="0,-10,0,0"
@@ -87,8 +88,9 @@
             <Label Text="Password"
                      FontSize="12"
                      TextTransform="Uppercase"
-                     Margin="0,0,200,10"
-                     HorizontalTextAlignment="Center"/>
+                     MinimumWidthRequest="100"
+                     Margin="8"
+                     HorizontalTextAlignment="Start"/>
 
             <Frame IsClippedToBounds="True"
                     Padding="0"
@@ -114,7 +116,7 @@
             
             <Button x:Name="LoginBtn"
                  Text="Einloggen"
-                 
+                 Clicked="LoginBtnClicked"
                  WidthRequest="250"/>
             
         </StackLayout>

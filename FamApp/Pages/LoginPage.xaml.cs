@@ -16,7 +16,7 @@ public partial class LoginPage : ContentPage
         public override bool IsEmpty => throw new NotImplementedException();
     }
 
-    async void LoginAccount(object sender, EventArgs args)
+   /* async void LoginAccount(object sender, EventArgs args)
     {
         string username = UserNameInput.Text;
         string password = PasswordInput.Text;
@@ -58,6 +58,6 @@ public partial class LoginPage : ContentPage
         Security sec = new Security();
         this.hashedpw = sec.HashPasword(validateData["timz"], out var salt);
         this.salt = salt;
-    }
+    }*/
 
 }
