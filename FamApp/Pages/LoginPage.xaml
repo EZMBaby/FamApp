@@ -32,7 +32,7 @@
                 HorizontalTextAlignment="Center"
                 Margin = "0,0,0,80"/>
 
-            <Label Text="Email"
+            <Label Text="Username"
                     FontSize="12"
                     TextTransform="Uppercase"
                     Margin="8"
@@ -43,8 +43,8 @@
                     MaximumWidthRequest="275"
                     CornerRadius="25">
 
-                <Entry x:Name="EmailInput"
-                    Placeholder="Email"
+                <Entry x:Name="UsernameInput"
+                    Placeholder="Username"
                     MaximumWidthRequest="300"
                     Keyboard="Email"/>
 
