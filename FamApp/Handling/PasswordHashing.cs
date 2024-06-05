@@ -5,6 +5,8 @@ namespace FamApp.Routes
 {
     public class PasswordHashing
     {
+        /* DOKUMENTATION IN HANDLING/PASSWORDHASH.MD */
+
         /// <summary>
         /// Größe des Salt.
         /// </summary>
