@@ -4,13 +4,61 @@
              x:Class="FamApp.Pages.Hauptmenu"
              Title="Hauptmenu"
              Shell.NavBarIsVisible="False">
-    
-    <Grid RowDefinitions="10" ColumnDefinitions="5">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="25"/>
+        </Grid.ColumnDefinitions>
+        <Border 
+                Grid.Column="0"
+                Grid.ColumnSpan="5"
+                WidthRequest="200">
+            
+        </Border>
 
         <Label Grid.Row="1"
-               Grid.Column="2"
-           Text="Familie"
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+               Grid.Column="0"
+               Grid.ColumnSpan="5"
+               Background="AliceBlue"/>
+        <Label Grid.Column="0"
+               Grid.ColumnSpan="5"
+               Grid.Row="2"
+               Text="Column 1, Row 1"
+               Background="DarkCyan"/>
+        <Label Grid.Column="1"
+                Grid.Row="3"
+                Text="Column 1, Row 1"
+                Background="IndianRed"/>
+        <Label Grid.Column="3"
+                Grid.Row="3"
+                Text="Column 1, Row 1"
+                Background="IndianRed"/>
+        <Label Grid.Column="3"
+                Grid.Row="4"
+                Text="Column 1, Row 1"
+                Background="Yellow"/>
+        <Label Grid.Column="1"
+                Grid.Row="4"
+                Text="Column 1, Row 1"
+                Background="Violet"/>
+
+        <Label Grid.Column="0"
+               Grid.ColumnSpan="5"
+                 Grid.Row="5"
+                 Text="Column 1, Row 1"
+                 Background="NavajoWhite"/>
     </Grid>
+
 </ContentPage>
