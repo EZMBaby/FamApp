@@ -57,7 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Routes\NewFile1.txt" />
+	  <None Remove="Handling\NewFile1.txt" />
 	</ItemGroup>
 
 	<ItemGroup>
