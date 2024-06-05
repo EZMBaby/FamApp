@@ -16,7 +16,7 @@ public partial class LoginPage : ContentPage
 
     async void LoginAccount(object sender, EventArgs args)
     {
-        string username = FirstNameInput.Text;
+        string username = UsernameInput.Text;
         string password = PasswordInput.Text;
         if (CheckLoginData(username, password)) {
            bool action = await DisplayAlert("Angemeldet", "Login erfolgreich", "Okay", "Cancel");
@@ -32,7 +32,7 @@ public partial class LoginPage : ContentPage
         else
         {
             PasswordInput.Text = string.Empty;
-            FirstNameInput.Text = string.Empty;
+            UsernameInput.Text = string.Empty;
             await DisplayAlert("Nicht Angemeldet", "Login fehlgeschlagen", "Okay", "Cancel");
         }
     }
