@@ -13,9 +13,6 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-
-
-       
     }
     async void LoginBtnClicked(object sender, EventArgs e)
     {
