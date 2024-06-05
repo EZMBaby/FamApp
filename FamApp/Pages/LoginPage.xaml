@@ -59,7 +59,7 @@
             </Frame>
             <Button  x:Name="SignUpBtn"
                      Clicked="LoginAccount"
-                     Text="Jetzt registrieren"
+                     Text="Anmelden"
                      Margin="0,0,0,10"/>
 
             <Label  Text="Already Registered? Click here!"
@@ -67,7 +67,7 @@
                     Margin="0,0,0,10"/>
 
             <Button x:Name="SignupBtn"
-                 Text="Anmelden"/>
+                 Text="Jetzt Registrieren"/>
 
         </StackLayout>
 

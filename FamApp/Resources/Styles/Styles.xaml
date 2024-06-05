@@ -424,8 +424,7 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Background">
             <Setter.Value>
-
-               <LinearGradientBrush
+                <LinearGradientBrush
                        StartPoint="0,0"
                        EndPoint="1,0.5">        
                     <GradientStop Color="#000000" Offset="0.2"/>
