@@ -6,7 +6,7 @@ public partial class LoginPage : ContentPage
 {
     private Dictionary<string, string> validateData = new Dictionary<string, string>
     {
-        { "timz", "123123" }
+        { "timz", PasswordHashing.Hash("123123") }
     };
 
     public class LinearGradientBrush : GradientBrush
@@ -41,9 +41,7 @@ public partial class LoginPage : ContentPage
     {
         try
         {
-            // TODO: hashedPassword aus der API holen
-            string hashedPassword = PasswordHashing.Hash(validateData[username]);
-            return PasswordHashing.Verify(password, hashedPassword);
+            return PasswordHashing.Verify(password, validateData[username]);
         }
         catch
         {
