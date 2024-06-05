@@ -188,7 +188,7 @@
     </Style>
 
     <Style TargetType="Label">
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="White" />
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="14" />
@@ -424,8 +424,7 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Background">
             <Setter.Value>
-
-               <LinearGradientBrush
+                <LinearGradientBrush
                        StartPoint="0,0"
                        EndPoint="1,0.5">        
                     <GradientStop Color="#000000" Offset="0.2"/>

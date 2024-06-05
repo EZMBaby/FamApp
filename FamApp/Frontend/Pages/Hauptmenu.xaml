@@ -2,17 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FamApp.Pages.Hauptmenu"
-             Title="Hauptmenu">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Frame IsClippedToBounds="True"
-                Padding="0"
-                Margin="0,-10,0,0"
-                MaximumWidthRequest="275"
-                CornerRadius="25"/>
+             Title="Hauptmenu"
+             Shell.NavBarIsVisible="False">
+    
+    <Grid RowDefinitions="10" ColumnDefinitions="5">
 
-    </VerticalStackLayout>
+        <Label Grid.Row="1"
+               Grid.Column="2"
+           Text="Familie"
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+    </Grid>
 </ContentPage>
