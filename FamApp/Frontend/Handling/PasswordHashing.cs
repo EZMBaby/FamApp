@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace FamApp.Routes
+namespace FamApp.Frontend.Handling
 {
     public class PasswordHashing
     {

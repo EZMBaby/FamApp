@@ -1,8 +1,8 @@
 ﻿using FamApp.Pages;
 
-namespace FamApp.Routes;
+namespace FamApp.Frontend.Handling;
 
 public static class Routes
 {
-    
+
 }

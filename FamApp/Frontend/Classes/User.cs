@@ -3,9 +3,9 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using FamApp.ApiHandling;
+using FamApp.Frontend.ApiHandling;
 
-namespace FamApp.Classes
+namespace FamApp.Frontend.Classes
 {
     public class User
     {
@@ -38,7 +38,7 @@ namespace FamApp.Classes
             // Abhängig vom StatusCode erfolgt Rückgabe
             // StatusCode = OK (bspw.: 200) return Liste aus Usern
             // StatusCode = Nicht OK (bspw.: 400, 500) return null
-            return (response.IsSuccessStatusCode)
+            return response.IsSuccessStatusCode
                 ? await response.Content.ReadAsAsync<List<User>>()
                 : null;
         }
@@ -49,7 +49,7 @@ namespace FamApp.Classes
 
             HttpResponseMessage response = await client.Client.GetAsync($"{client.Url + typeof(User).Name}/id/{getId}");
 
-            return (response.IsSuccessStatusCode)
+            return response.IsSuccessStatusCode
                 ? await response.Content.ReadAsAsync<User>()
                 : null;
         }
@@ -64,7 +64,7 @@ namespace FamApp.Classes
 
             HttpResponseMessage responseUser = await client.Client.GetAsync($"{client.Url + typeof(User).Name}/mail/{user.Email}");
 
-            return (responseUser.IsSuccessStatusCode)
+            return responseUser.IsSuccessStatusCode
                 ? await responseUser.Content.ReadAsAsync<User>()
                 : null;
         }

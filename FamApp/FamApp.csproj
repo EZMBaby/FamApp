@@ -57,7 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Handling\NewFile1.txt" />
+	  <None Remove="Frontend\Handling\NewFile1.txt" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -69,27 +69,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\LoginPage.xaml.cs">
+	  <Compile Update="Frontend\Pages\LoginPage.xaml.cs">
 	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Pages\SignUpPage.xaml.cs">
+	  <Compile Update="Frontend\Pages\SignUpPage.xaml.cs">
 	    <DependentUpon>SignUpPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\Hauptmenu.xaml">
+	  <MauiXaml Update="Frontend\Pages\Hauptmenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Home.xaml">
+	  <MauiXaml Update="Frontend\Pages\Home.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\LoginPage.xaml">
+	  <MauiXaml Update="Frontend\Pages\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\SignUpPage.xaml">
+	  <MauiXaml Update="Frontend\Pages\SignUpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Backend\" />
 	</ItemGroup>
 
 </Project>
