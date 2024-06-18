@@ -13,6 +13,10 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        Button button = new Button
+        {
+            Text = "OK",
+        };
     }
     async void LoginBtnClicked(object sender, EventArgs e)
     {
