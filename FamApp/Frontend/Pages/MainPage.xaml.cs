@@ -1,27 +1,31 @@
-﻿namespace FamApp.Pages;
+﻿using CommunityToolkit.Maui.Markup;
+using FamApp.Frontend;
+using FamApp.Frontend.Components;
+using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 
-
-
-public class LinearGradientBrush : Microsoft.Maui.Controls.GradientBrush
-{
-    public override bool IsEmpty => throw new NotImplementedException();
-}
+namespace FamApp.Pages;
 
 public partial class MainPage : ContentPage
 {
+    private readonly MainViewModel viewModel = new();
+    CustomInput input = new();
 
     public MainPage()
     {
-        InitializeComponent();
-    }
-    async void LoginBtnClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new LoginPage());
+        Content = new StackLayout
+        {
+
+            Children =
+            {
+                new Label()
+                    .Text("Customer name:"),
+
+                input.GetCustomInput("Test1", viewModel),
+                input.GetCustomInput("Test2", viewModel),
+                input.GetCustomInput("Test3", viewModel)
+            }
+        };
     }
 
-    async void SignUpBtnClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new SignUpPage());
-    }
 
 }
