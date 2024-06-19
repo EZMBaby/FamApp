@@ -6,17 +6,16 @@ namespace FamApp.Frontend.Components
     {
         public static StackLayout Create(
             string labelText, 
-            string placeholder, 
+            string placeholder,
             MainViewModel viewModel)
         {
             StackLayout views = new StackLayout()
             {
-
                 Children =
                 {
                     new Label()
                     {
-                        Text = viewModel.Name,
+                        Text = labelText,
                         HorizontalTextAlignment = TextAlignment.Start,
                         VerticalTextAlignment = TextAlignment.End,
                         TextColor = Colors.White,
