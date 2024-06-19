@@ -9,7 +9,7 @@ namespace FamApp.Frontend.Components
             string labelText, 
             string placeholder, 
             MainViewModel viewModel,
-            bool isPassword = false
+            bool password = false
             )
         {
             
