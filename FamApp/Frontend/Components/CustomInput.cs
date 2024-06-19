@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui.Markup;
+using System.Runtime.CompilerServices;
 
 namespace FamApp.Frontend.Components
 {
@@ -9,6 +10,7 @@ namespace FamApp.Frontend.Components
             string placeholder,
             MainViewModel viewModel)
         {
+            
             StackLayout views = new StackLayout()
             {
                 Children =
@@ -19,7 +21,8 @@ namespace FamApp.Frontend.Components
                         HorizontalTextAlignment = TextAlignment.Start,
                         VerticalTextAlignment = TextAlignment.End,
                         TextColor = Colors.White,
-                    }.Margins(10, 0, 0, 0),
+                    }.Margins(10, 0, 0, 0)
+                        .Bind(Label.TextProperty, getter: (MainViewModel mvm) => mvm.Name),
 
                     new Entry()
                     {
@@ -30,7 +33,9 @@ namespace FamApp.Frontend.Components
                             .TextColor(Colors.White)
                             .Height(44)
                             .Margin(6, 6)
-                            .Bind(Entry.TextProperty, nameof(viewModel.Name), BindingMode.TwoWay)
+                            .Bind(Entry.TextProperty, 
+                                getter: (MainViewModel mvm) => mvm.Name,
+                                setter: (MainViewModel mvm, string code) => mvm.Name = code)
                 }
             }.Width(400);
 
