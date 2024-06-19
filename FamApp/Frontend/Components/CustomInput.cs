@@ -7,14 +7,16 @@ namespace FamApp.Frontend.Components
     {
         public static StackLayout Create(
             string labelText, 
-            string placeholder,
-            MainViewModel viewModel)
+            string placeholder, 
+            MainViewModel viewModel
+            )
         {
             
             StackLayout views = new StackLayout()
             {
                 Children =
                 {
+
                     new Label()
                     {
                         Text = labelText,
@@ -26,6 +28,10 @@ namespace FamApp.Frontend.Components
 
                     new Entry()
                     {
+                        Placeholder = placeholder,
+                        TextColor = Colors.White,
+                        FontSize = 15,
+                        HeightRequest = 44,
                         Keyboard = Keyboard.Text,
                         BackgroundColor = Colors.AliceBlue,
                     }.FontSize(15)
@@ -37,6 +43,7 @@ namespace FamApp.Frontend.Components
                                 getter: (MainViewModel mvm) => mvm.Name,
                                 setter: (MainViewModel mvm, string code) => mvm.Name = code)
                 }
+                
             }.Width(400);
 
             return views;

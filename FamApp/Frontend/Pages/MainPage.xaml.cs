@@ -9,6 +9,7 @@ public partial class MainPage : ContentPage
 {
     private readonly MainViewModel viewModel = new();
 
+
     async void LoginBtnClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new LoginPage());
