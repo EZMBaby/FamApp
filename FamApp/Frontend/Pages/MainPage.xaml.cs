@@ -10,7 +10,7 @@ namespace FamApp.Pages;
 public partial class MainPage : ContentPage
 {
     private readonly MainViewModel viewModel = new();
-    CustomInput input = new();
+
 
     async void LoginBtnClicked(object sender, EventArgs e)
     {

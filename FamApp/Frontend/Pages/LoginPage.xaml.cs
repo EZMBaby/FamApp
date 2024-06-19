@@ -1,4 +1,5 @@
 using CommunityToolkit.Maui.Markup;
+using FamApp.Frontend;
 using FamApp.Frontend.Components;
 using FamApp.Frontend.Handling;
 using static CommunityToolkit.Maui.Markup.GridRowsColumns;
@@ -7,6 +8,7 @@ namespace FamApp.Pages;
 
 public partial class LoginPage : ContentPage
 {
+    private readonly MainViewModel viewModel = new();
     private Dictionary<string, string> validateData = new Dictionary<string, string>
     {
         { "timz", PasswordHashing.Hash("123123") }
@@ -68,7 +70,8 @@ public partial class LoginPage : ContentPage
                 {
                     Headline.SetterHeadline("Log in", 0, -20,0,-8),
                     Subline.SetterSubline("Sign in to continue", 0,0,0,80),
-
+                    CustomInput.Create("Username", "Username",viewModel),
+                    CustomInput.Create("Passwort", "Passwort",viewModel),
                 }.Row(1).Column(1).Margins(20,0,20,0),
 
                  CustomBackground.SetterBackground(0,40,30,-80).Row(2).Column(2),
