@@ -69,9 +69,19 @@ public partial class LoginPage : ContentPage
                 new StackLayout
                 {
                     Headline.SetterHeadline("Log in", 0, -20,0,-8),
+
                     Subline.SetterSubline("Sign in to continue", 0,0,0,80),
+
                     CustomInput.Create("Username", "Username",viewModel),
+
                     CustomInput.Create("Passwort", "Passwort",viewModel),
+
+                    CustomButton.SetterButton("Anmelden",0,30,0,10),
+
+                    Subline.SetterSubline("Already Registered? Click here!"),
+
+                    CustomButton.SetterButton("Jetzt Registrieren")
+
                 }.Row(1).Column(1).Margins(20,0,20,0),
 
                  CustomBackground.SetterBackground(0,40,30,-80).Row(2).Column(2),

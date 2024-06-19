@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui.Markup;
+using System.Runtime.CompilerServices;
 
 namespace FamApp.Frontend.Components
 {
@@ -7,7 +8,8 @@ namespace FamApp.Frontend.Components
         public static StackLayout Create(
             string labelText, 
             string placeholder, 
-            MainViewModel viewModel
+            MainViewModel viewModel,
+            bool password = false
             )
         {
             StackLayout views = new StackLayout()
@@ -15,28 +17,24 @@ namespace FamApp.Frontend.Components
                 Children =
                 {
 
-                    new Label()
-                    {
-                        Text = labelText,
-                        HorizontalTextAlignment = TextAlignment.Start,
-                        VerticalTextAlignment = TextAlignment.End,
-                        TextColor = Colors.White,
-                    }.Margins(10, 0, 0, 0),
-                   
+                    CustomLabel.SetterLabel(labelText,8,0,8,-8),
+
                     new Entry()
                     {
+                        WidthRequest = 200,
                         Placeholder = placeholder,
                         TextColor = Colors.White,
                         FontSize = 15,
                         HeightRequest = 44,
+                        IsPassword = password,
                         Keyboard = Keyboard.Text,
-                        BackgroundColor = Colors.AliceBlue,
-                        
+
                      } .Margin(6, 6)
-                       .Bind(Entry.TextProperty, nameof(viewModel.Name), BindingMode.TwoWay)
+                       .Bind(Entry.TextProperty, nameof(viewModel.Name), BindingMode.TwoWay),
+                 
                 }
-                
-            }.Width(400);
+
+            }.Width(250);
 
             return views;
         }
