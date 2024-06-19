@@ -9,7 +9,7 @@ namespace FamApp.Frontend.Components
 {
     static class CustomBackground
     {
-        public static Frame SetterBackground(int right, int down, int left, int up)
+        public static Frame SetterBackground(int right, int up, int left, int down)
         {
             Frame background = new Frame()
             {
@@ -17,7 +17,7 @@ namespace FamApp.Frontend.Components
                 WidthRequest = 150,
                 HeightRequest = 150,
                 CornerRadius = 300,
-            }.Margins(right, down, left, up);
+            }.Margins(right, up, left, down);
 
             return background;
         }

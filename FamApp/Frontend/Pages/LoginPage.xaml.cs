@@ -1,4 +1,7 @@
+using CommunityToolkit.Maui.Markup;
+using FamApp.Frontend.Components;
 using FamApp.Frontend.Handling;
+using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 
 namespace FamApp.Pages;
 
@@ -51,7 +54,27 @@ public partial class LoginPage : ContentPage
 
     public LoginPage()
 	{
-		InitializeComponent();
+        Content = new Grid()
+        {
+            RowDefinitions = Rows.Define(100, Star, 100),
+
+            ColumnDefinitions = Columns.Define(30, Star, 30),
+
+            Children =
+            {
+                 CustomBackground.SetterBackground(-80,-40,0,0).Row(0).Column(0),
+
+                new StackLayout
+                {
+                    Headline.SetterHeadline("Log in", 0, -20,0,-8),
+                    Subline.SetterSubline("Sign in to continue", 0,0,0,80),
+
+                }.Row(1).Column(1).Margins(20,0,20,0),
+
+                 CustomBackground.SetterBackground(0,40,30,-80).Row(2).Column(2),
+
+            }
+        };
     }
 
 }

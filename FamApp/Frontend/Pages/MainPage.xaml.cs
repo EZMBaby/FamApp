@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui.Markup;
 using FamApp.Frontend;
 using FamApp.Frontend.Components;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 
 namespace FamApp.Pages;
@@ -8,6 +10,7 @@ namespace FamApp.Pages;
 public partial class MainPage : ContentPage
 {
     private readonly MainViewModel viewModel = new();
+    CustomInput input = new();
 
     async void LoginBtnClicked(object sender, EventArgs e)
     {
@@ -24,6 +27,7 @@ public partial class MainPage : ContentPage
         Content = new Grid
         {
             RowDefinitions = Rows.Define(100,Star,100),
+
             ColumnDefinitions = Columns.Define(30,Star,30),
 
             Children =
@@ -33,7 +37,7 @@ public partial class MainPage : ContentPage
                 new StackLayout
                 {
                    Headline.SetterHeadline("Welcome", 0,30,0,-10),
-                   CustomLabel.SetterSubline("to"),
+                   Subline.SetterSubline("to"),
                    Headline.SetterHeadline("FamApp", 0, -15, 0, 80),
                    Description.SetterDescription("New Here? Sign up now!"),
                    CustomButton.SetterButton("Sign up now", 0,0,0,30)
@@ -45,7 +49,12 @@ public partial class MainPage : ContentPage
                 }.Row(1).Column(1).Margins(20,0,20,0),
 
                  CustomBackground.SetterBackground(0,40,30,-80).Row(2).Column(2),
+
+
             }
+            
         };
     }
+
+
 }

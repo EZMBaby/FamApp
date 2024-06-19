@@ -9,14 +9,14 @@ namespace FamApp.Frontend.Components
 {
     static class CustomButton
     {
-        public static Button SetterButton(string text, int right= 0, int down = 0, int left = 0, int up = 0)
+        public static Button SetterButton(string text, int right= 0, int up = 0, int left = 0, int down = 0)
         {
             Button button = new Button()
             {
                 Text = text,
 
 
-            }.Margins(right, down, left, up);
+            }.Margins(right, up, left, down);
 
             return button;
         }

@@ -7,16 +7,16 @@ using CommunityToolkit.Maui.Markup;
 
 namespace FamApp.Frontend.Components
 {
-    static class CustomLabel
+    static class Subline
     {
-        public static Label SetterSubline(string text, int right = 0, int down = 0, int left = 0, int up = 0)
+        public static Label SetterSubline(string text, int right = 0, int up = 0, int left = 0, int down = 0)
         {
         Label subline = new Label()
         {
             Text = text,
             FontSize = 14,
             HorizontalTextAlignment= TextAlignment.Center,
-        }.Margins(right, down, left, up);
+        }.Margins(right, up, left, down);
             return subline;
         }
     }
