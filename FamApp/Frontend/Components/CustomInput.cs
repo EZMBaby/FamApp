@@ -12,13 +12,12 @@ namespace FamApp.Frontend.Components
         {
             StackLayout views = new StackLayout()
             {
-
                 Children =
                 {
 
                     new Label()
                     {
-                       Text = viewModel.Name,
+                        Text = labelText,
                         HorizontalTextAlignment = TextAlignment.Start,
                         VerticalTextAlignment = TextAlignment.End,
                         TextColor = Colors.White,
