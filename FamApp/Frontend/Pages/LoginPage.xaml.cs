@@ -77,10 +77,12 @@ public partial class LoginPage : ContentPage
                     CustomInput.Create("Passwort", "Passwort",viewModel),
 
                     CustomButton.SetterButton("Anmelden",0,30,0,10),
+                    //.Invoke(button => button.Clicked += LoginAccount),
 
                     Subline.SetterSubline("Already Registered? Click here!"),
 
                     CustomButton.SetterButton("Jetzt Registrieren")
+                    .Invoke(button => button.Clicked += SignUpBtnClicked)
 
                 }.Row(1).Column(1).Margins(20,0,20,0),
 
@@ -88,6 +90,10 @@ public partial class LoginPage : ContentPage
 
             }
         };
+    }
+    async void SignUpBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SignUpPage());
     }
 
 }
