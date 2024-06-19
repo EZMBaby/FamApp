@@ -12,6 +12,7 @@ namespace FamApp.Frontend.Components
             bool password = false
             )
         {
+            
             StackLayout views = new StackLayout()
             {
                 Children =

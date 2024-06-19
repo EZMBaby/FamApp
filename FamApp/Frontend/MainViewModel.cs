@@ -4,8 +4,7 @@ using System.Diagnostics;
 
 namespace FamApp.Frontend
 {
-    [INotifyPropertyChanged]
-    public partial class MainViewModel
+    public partial class MainViewModel : ObservableObject
     {
         [ObservableProperty]
         private string name;
