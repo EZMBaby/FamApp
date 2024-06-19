@@ -8,7 +8,8 @@ namespace FamApp.Frontend.Components
         public static StackLayout Create(
             string labelText, 
             string placeholder, 
-            MainViewModel viewModel
+            MainViewModel viewModel,
+            bool isPassword = false
             )
         {
             
@@ -34,6 +35,7 @@ namespace FamApp.Frontend.Components
                         HeightRequest = 44,
                         Keyboard = Keyboard.Text,
                         BackgroundColor = Colors.AliceBlue,
+                        IsPassword = isPassword
                     }.FontSize(15)
                             .Placeholder(placeholder)
                             .TextColor(Colors.White)

@@ -61,7 +61,7 @@ public partial class MainPage : ContentPage
                     .Invoke(button => button.Clicked += LoginBtnClicked),
 
                    CustomInput
-                    .Create("Test", "Placeholder", viewModel)
+                    .Create("Test", "Placeholder", viewModel, true)
 
                 }.Row(1)
                     .Column(1)
