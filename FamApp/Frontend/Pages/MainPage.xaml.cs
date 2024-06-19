@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui.Markup;
 using FamApp.Frontend;
 using FamApp.Frontend.Components;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 
 namespace FamApp.Pages;
@@ -10,20 +12,46 @@ public partial class MainPage : ContentPage
     private readonly MainViewModel viewModel = new();
     CustomInput input = new();
 
+    async void LoginBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new LoginPage());
+    }
+
+    async void SignUpBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SignUpPage());
+    }
+
     public MainPage()
     {
-        Content = new StackLayout
+        Content = new Grid
         {
+            RowDefinitions = Rows.Define(100,Star,100),
+
+            ColumnDefinitions = Columns.Define(30,Star,30),
 
             Children =
-            {
-                new Label()
-                    .Text("Customer name:"),
+            {      
+                CustomBackground.SetterBackground(-80,-40,0,0).Row(0).Column(0),
 
-                input.GetCustomInput("Test1", viewModel),
-                input.GetCustomInput("Test2", viewModel),
-                input.GetCustomInput("Test3", viewModel)
+                new StackLayout
+                {
+                   Headline.SetterHeadline("Welcome", 0,30,0,-10),
+                   CustomLabel.SetterSubline("to"),
+                   Headline.SetterHeadline("FamApp", 0, -15, 0, 80),
+                   Description.SetterDescription("New Here? Sign up now!"),
+                   CustomButton.SetterButton("Sign up now", 0,0,0,30)
+                   .Invoke(signup => signup.Clicked += SignUpBtnClicked),
+                   Description.SetterDescription("Already registered? Log in here"),
+                   CustomButton.SetterButton("Login")
+                    .Invoke(button => button.Clicked += LoginBtnClicked)
+                }.Row(1).Column(1).Margins(20,0,20,0),
+
+                 CustomBackground.SetterBackground(0,40,30,-80).Row(2).Column(2),
+
+
             }
+            
         };
     }
 
