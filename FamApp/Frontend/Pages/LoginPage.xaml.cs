@@ -72,9 +72,9 @@ public partial class LoginPage : ContentPage
 
                     Subline.SetterSubline("Sign in to continue", 0,0,0,80),
 
-                    CustomInput.Create("Username", "Username",viewModel),
+                    CustomInput.Create("Username", "Username", viewModel),
 
-                    CustomInput.Create("Passwort", "Passwort",viewModel),
+                    CustomInput.Create("Passwort", "Passwort", viewModel, true),
 
                     CustomButton.SetterButton("Anmelden",0,30,0,10),
                     //.Invoke(button => button.Clicked += LoginAccount),
