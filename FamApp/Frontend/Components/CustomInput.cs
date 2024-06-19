@@ -1,26 +1,41 @@
 ﻿using CommunityToolkit.Maui.Markup;
-using FamApp.Pages;
-using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 
 namespace FamApp.Frontend.Components
 {
-    class CustomInput
+    static class CustomInput
     {
-        public Entry GetCustomInput(string text, MainViewModel viewModel)
+        public static StackLayout Create(
+            string labelText, 
+            string placeholder, 
+            MainViewModel viewModel)
         {
-            // TODO: Grid as Layout for Component
-            Entry entry = new Entry()
+            StackLayout views = new StackLayout()
             {
-                Keyboard = Keyboard.Numeric,
-                BackgroundColor = Colors.AliceBlue
-            }.FontSize(15)
-                    .Placeholder(text)
-                    .TextColor(Colors.Black)
-                    .Height(44)
-                    .Margin(6, 6)
-                    .Bind(Entry.TextProperty, nameof(viewModel.Name), BindingMode.TwoWay);
 
-            return entry;
+                Children =
+                {
+                    new Label()
+                    {
+                        Text = viewModel.Name,
+                        HorizontalTextAlignment = TextAlignment.Start,
+                        VerticalTextAlignment = TextAlignment.End,
+                        TextColor = Colors.White,
+                    }.Margins(10, 0, 0, 0),
+
+                    new Entry()
+                    {
+                        Keyboard = Keyboard.Text,
+                        BackgroundColor = Colors.AliceBlue,
+                    }.FontSize(15)
+                            .Placeholder(placeholder)
+                            .TextColor(Colors.White)
+                            .Height(44)
+                            .Margin(6, 6)
+                            .Bind(Entry.TextProperty, nameof(viewModel.Name), BindingMode.TwoWay)
+                }
+            }.Width(400);
+
+            return views;
         }
     }
 }
