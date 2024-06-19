@@ -9,14 +9,14 @@ namespace FamApp.Frontend.Components
 {
     static class Headline
     {
-        public static Label SetterHeadline(string text,int right, int down, int left, int up ) 
+        public static Label SetterHeadline(string text,int right, int up, int left, int down ) 
         {
             Label headline = new Label()
             {
                 FontSize = 37,
                 HorizontalTextAlignment= TextAlignment.Center,
                 Text = text,
-            }.Margins(right,down,left,up);
+            }.Margins(right,up,left,down);
 
             return headline;
         }

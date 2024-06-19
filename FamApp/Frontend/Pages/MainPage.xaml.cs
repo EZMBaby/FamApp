@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
                 new StackLayout
                 {
                    Headline.SetterHeadline("Welcome", 0,30,0,-10),
-                   CustomLabel.SetterSubline("to"),
+                   Subline.SetterSubline("to"),
                    Headline.SetterHeadline("FamApp", 0, -15, 0, 80),
                    Description.SetterDescription("New Here? Sign up now!"),
                    CustomButton.SetterButton("Sign up now", 0,0,0,30)
@@ -45,7 +45,7 @@ public partial class MainPage : ContentPage
                    Description.SetterDescription("Already registered? Log in here"),
                    CustomButton.SetterButton("Login")
                     .Invoke(button => button.Clicked += LoginBtnClicked)
-                }.Row(1).Column(1).Margins(20,0,20,0),
+                }.Row(1).Column(1),
 
                  CustomBackground.SetterBackground(0,40,30,-80).Row(2).Column(2),
 
