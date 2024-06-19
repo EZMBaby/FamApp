@@ -60,8 +60,6 @@ public partial class MainPage : ContentPage
                     .SetterButton("Login")
                     .Invoke(button => button.Clicked += LoginBtnClicked),
 
-                   CustomInput
-                    .Create("Test", "Placeholder", viewModel, true)
 
                 }.Row(1)
                     .Column(1)

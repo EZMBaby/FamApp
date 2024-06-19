@@ -18,35 +18,24 @@ namespace FamApp.Frontend.Components
                 Children =
                 {
 
-                    new Label()
-                    {
-                        Text = labelText,
-                        HorizontalTextAlignment = TextAlignment.Start,
-                        VerticalTextAlignment = TextAlignment.End,
-                        TextColor = Colors.White,
-                    }.Margins(10, 0, 0, 0)
-                        .Bind(Label.TextProperty, getter: (MainViewModel mvm) => mvm.Name),
+                    CustomLabel.SetterLabel(labelText,8,0,8,-8),
 
                     new Entry()
                     {
+                        WidthRequest = 200,
                         Placeholder = placeholder,
                         TextColor = Colors.White,
                         FontSize = 15,
                         HeightRequest = 44,
+                        IsPassword = password,
                         Keyboard = Keyboard.Text,
-                        BackgroundColor = Colors.AliceBlue,
-                        IsPassword = isPassword
-                    }.FontSize(15)
-                            .Placeholder(placeholder)
-                            .TextColor(Colors.White)
-                            .Height(44)
-                            .Margin(6, 6)
-                            .Bind(Entry.TextProperty, 
-                                getter: (MainViewModel mvm) => mvm.Name,
-                                setter: (MainViewModel mvm, string code) => mvm.Name = code)
+
+                     } .Margin(6, 6)
+                       .Bind(Entry.TextProperty, nameof(viewModel.Name), BindingMode.TwoWay),
+                 
                 }
-                
-            }.Width(400);
+
+            }.Width(250);
 
             return views;
         }

@@ -1,20 +1,66 @@
+using CommunityToolkit.Maui.Markup;
+using FamApp.Frontend;
 using FamApp.Frontend.Classes;
+using FamApp.Frontend.Components;
 using System.Text.RegularExpressions;
+using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 
 namespace FamApp.Pages;
 
 public partial class SignUpPage : ContentPage
 {
+    private readonly MainViewModel viewModel = new();
     private User newUser;
     private Regex regex;
     public User NewUser { get { return newUser; } set { newUser = value; } }
-	public SignUpPage()
-	{
-		InitializeComponent();
+    public SignUpPage()
+    {
+        InitializeComponent();
 
         NewUser = new User();
         regex = new Regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
-       
+
+        Content = new Grid
+        {
+            RowDefinitions = Rows.Define(100, Star, 100),
+
+            ColumnDefinitions = Columns.Define(30, Star, 30),
+
+            Children =
+            {
+                 CustomBackground.SetterBackground(-80,-40,0,0)
+                    .Row(0)
+                    .Column(0),
+
+                  new StackLayout
+                {
+                   Headline
+                    .SetterHeadline("Creat new", 0,30,0,-10),
+
+                   Headline
+                   .SetterHeadline("Account" ,0,0,0,30),
+
+                  CustomInput.Create("Vorname","Vorname", viewModel),
+                  CustomInput.Create("Nachname","Nachname", viewModel),
+                  CustomInput.Create("Email","Email", viewModel),
+                  CustomInput.Create("Passwort","Passwort", viewModel, true),
+
+                  CustomButton.SetterButton("Jetzt registieren",0,0,0,10)
+                  .Invoke(button => button.Clicked += OnRegisterClick),
+                  
+
+                  CustomButton.SetterButton("Einloggen")
+                  .Invoke(button => button.Clicked += LoginBtnClicked),
+                  }.Row(0)
+                   .RowSpan(2)
+                   .Column(1)
+                   .Margins(20,0,20,0),
+                  CustomBackground
+                    .SetterBackground(0, 40, 30, -80)
+                    .Row(2)
+                    .Column(2),
+        } 
+        };
     }
     async void LoginBtnClicked(object sender, EventArgs e)
     {
